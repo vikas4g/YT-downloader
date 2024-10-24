@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader with Progress Bar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Downloader</h1>
+        <form id="downloadForm">
+            <label for="url">YouTube URL:</label>
+            <input type="text" id="url" name="url" required>
+
+            <label for="format">Choose Format:</label>
+            <select id="format" name="format">
+                <option value="1080p">1080p (Video)</option>
+                <option value="720p">720p (Video)</option>
+                <option value="144p">144p (Video)</option>
+                <option value="audio">Audio (MP3)</option>
+            </select>
+
+            <button type="submit">Download</button>
+        </form>
+
+        <div id="progressContainer" style="display: none;">
+            <h2>Download Progress</h2>
+            <div class="progress-bar">
+                <div id="progressBarFill" style="width: 0%;"></div>
+            </div>
+            <p id="progressText">0%</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
